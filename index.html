@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b14">
+  <meta name="description" content="Nebula — a personal browsing launchpad.">
+  <title>Nebula</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="./"><span class="brand-mark">✦</span><span>Nebula</span></a>
+      <span class="top-note">PERSONAL BROWSING SPACE</span>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow"><span class="status-dot"></span> YOUR SPACE ON THE WEB</div>
+      <h1>Explore the <span>internet.</span></h1>
+      <p class="subtitle">Open a supported site in Nebula, or search the web.</p>
+      <form class="search-card" id="open-form">
+        <label class="sr-only" for="address">Search or enter a website address</label>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="address" autocomplete="off" placeholder="Enter a website address..." spellcheck="false">
+        <button type="submit">Open ↗</button>
+      </form>
+      <p class="search-hint">Some websites block being displayed inside another site. Those sites may need to open directly.</p>
+    </section>
+
+    <section class="browser" aria-label="Nebula browser">
+      <div class="browser-top">
+        <div class="browser-dots"><i></i><i></i><i></i></div>
+        <div class="browser-label" id="browser-label">Nebula browser</div>
+        <button class="small-button" id="refresh" type="button" title="Reload">↻</button>
+      </div>
+      <div class="browser-stage" id="browser-stage">
+        <div class="welcome" id="welcome">
+          <div class="welcome-icon">✦</div>
+          <h2>Your browsing space</h2>
+          <p>Enter a URL above or choose a shortcut below.</p>
+          <p class="subtle">Xbox Play is available as an official-site shortcut. Whether it can display here depends on Microsoft's embedding rules.</p>
+          <button class="primary-button" id="open-xbox" type="button">Try Xbox Play ↗</button>
+        </div>
+        <iframe id="site-frame" title="Nebula embedded website" hidden referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+        <div class="blocked" id="blocked" hidden>
+          <div class="blocked-icon">↗</div>
+          <h2>This site won't embed here</h2>
+          <p>The website's security policy prevents it from appearing inside Nebula. Nebula can't override that policy.</p>
+          <a id="direct-link" href="https://play.xbox.com" target="_blank" rel="noopener noreferrer">Open the official site in a new tab ↗</a>
+        </div>
+      </div>
+      <div class="browser-bottom">
+        <span id="status">Ready</span>
+        <span>Websites control whether they allow embedding</span>
+      </div>
+    </section>
+
+    <section class="shortcuts">
+      <div class="section-heading"><div><p class="eyebrow">QUICK ACCESS</p><h2>Your shortcuts</h2></div><span class="shortcut-count">06 LINKS</span></div>
+      <div class="shortcut-grid">
+        <button class="shortcut" data-url="https://www.google.com"><span class="shortcut-icon google">G</span><span><b>Google</b><small>Search</small></span><span class="external">↗</span></button>
+        <button class="shortcut" data-url="https://www.youtube.com"><span class="shortcut-icon youtube">▶</span><span><b>YouTube</b><small>Videos</small></span><span class="external">↗</span></button>
+        <button class="shortcut" data-url="https://www.wikipedia.org"><span class="shortcut-icon wiki">W</span><span><b>Wikipedia</b><small>Knowledge</small></span><span class="external">↗</span></button>
+        <button class="shortcut" data-url="https://www.reddit.com"><span class="shortcut-icon reddit">●</span><span><b>Reddit</b><small>Communities</small></span><span class="external">↗</span></button>
+        <button class="shortcut" data-url="https://www.spotify.com"><span class="shortcut-icon spotify">≋</span><span><b>Spotify</b><small>Music</small></span><span class="external">↗</span></button>
+        <button class="shortcut" data-url="https://play.xbox.com"><span class="shortcut-icon xbox">X</span><span><b>Xbox Play</b><small>Xbox website</small></span><span class="external">↗</span></button>
+      </div>
+    </section>
+
+    <footer><span>✦ NEBULA</span><span>Personal browsing launchpad · <span id="year"></span></span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
